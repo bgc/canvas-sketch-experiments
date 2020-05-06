@@ -1,6 +1,6 @@
 import canvasSketch from 'canvas-sketch'
 
-const createUVGrid = () => {
+/* const createUVGrid = () => {
   const points = []
   const countX = 30
   const countY = 50
@@ -16,9 +16,9 @@ const createUVGrid = () => {
     }
   }
   return points
-}
+} */
 
-const sketchBorder = (
+/* const sketchBorder = (
   context,
   paperMargin,
   paperWidth,
@@ -32,7 +32,7 @@ const sketchBorder = (
     paperWidth - paperMargin * 2,
     paperHeight - paperMargin * 2
   )
-}
+} */
 
 const DRAW_PROPERTIES = {
   pensize: 0.05,
@@ -51,7 +51,7 @@ const settings = {
   // dimensions: [1920, 1080],
   // dimensions: 'a4',
   dimensions: DRAW_PROPERTIES.dimensions,
-  // pixelsPerInch: 300,
+  pixelsPerInch: 300,
   // units: 'mm',
   units: DRAW_PROPERTIES.units,
   scaleToFit: false
@@ -64,15 +64,28 @@ const sketchFn = (
     height
   }
 ) => {
+
+
   DRAW_PROPERTIES.mid = {
     x: width / 2,
     y: height / 2
   }
-  sketchBorder(context, DRAW_PROPERTIES.margins, width, height)
 
-  const points = createUVGrid()
 
-  points.forEach((point) => {
+  context.strokeStyle = 'black'
+  context.lineWidth = 20
+  context.lineCap = "butt"
+  context.miterLimit = 0.01
+  context.moveTo(100,100)
+  context.lineTo(10,10)
+  context.stroke()
+
+
+  // sketchBorder(context, DRAW_PROPERTIES.margins, width, height)
+
+  // const points = createUVGrid()
+
+  /* points.forEach((point) => {
     const x = point.u * width
     const y = point.v * height
     const xf = point.uf * width
@@ -92,7 +105,7 @@ const sketchFn = (
     context.arc(xm, ym, 0.2, 0, Math.PI * 2, false)
     context.strokeStyle = 'green'
     context.stroke()
-  })
+  }) */
 
   // const grid = gridMaker(
   //   DRAW_PROPERTIES.cols,
