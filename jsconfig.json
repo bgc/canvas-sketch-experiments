@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "noResolve": true, // because some imports didn't work
+    "moduleResolution": "node" // because of npm i <git or local dependency>
+  },
+  "include": ["**/*", "types/**/*"],
+  "exclude": ["node_modules"]
+}

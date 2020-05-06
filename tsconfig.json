@@ -1,0 +1,21 @@
+{
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules",
+  ],
+  "include": ["./types/*.d.ts"],
+  "files": [
+    "./src/sketch0000.ts"
+  ],
+  "compilerOptions": {
+    "typeRoots": ["./types"],
+    "allowJs": true,
+    "module": "ESNext",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    // "outFile": "sketch0000.js",
+    "outDir": "./bin",
+    "sourceMap": true
+  }
+}
