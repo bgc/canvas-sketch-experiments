@@ -109,22 +109,30 @@ class Grid {
         const startPoint = {
           u,
           v,
-          x: this.paperMargins /* + this.leftPad */ + (u * (this.paperSize.paperWidth - (2 * this.paperMargins))), // lerp(this.paperMargins, this.paperSize.paperWidth - this.paperMargins, u),
-          y: this.paperMargins /* + this.topPad  */+ (v * (this.paperSize.paperHeight - (2 * this.paperMargins))) // lerp(this.paperMargins, this.paperSize.paperHeight - this.paperMargins, v)
+          x: this.paperMargins +
+            (u * (this.paperSize.paperWidth - (2 * this.paperMargins))),
+
+          y: this.paperMargins +
+            (v * (this.paperSize.paperHeight - (2 * this.paperMargins)))
         }
 
         const endPoint = {
           u: uf,
           v: vf,
-          x: this.paperMargins /* + this.leftPad */ + (uf * (this.paperSize.paperWidth - (2 * this.paperMargins))),// lerp(this.paperMargins, this.paperSize.paperWidth - this.paperMargins, uf),
-          y: this.paperMargins /* + this.topPad  */+ (vf * (this.paperSize.paperHeight - (2 * this.paperMargins)))// lerp(this.paperMargins, this.paperSize.paperHeight - this.paperMargins, vf)
+          x: this.paperMargins +
+            (uf * (this.paperSize.paperWidth - (2 * this.paperMargins))),
+
+          y: this.paperMargins +
+            (vf * (this.paperSize.paperHeight - (2 * this.paperMargins)))
         }
 
         const midPoint = {
           u: mu,
           v: mv,
-          x: this.paperMargins /* + this.leftPad */ + (mu * (this.paperSize.paperWidth - (2 * this.paperMargins))),// lerp(this.paperMargins, this.paperSize.paperWidth - this.paperMargins, mu),
-          y: this.paperMargins /* + this.topPad  */+ (mv * (this.paperSize.paperHeight - (2 * this.paperMargins)))// lerp(this.paperMargins, this.paperSize.paperHeight - this.paperMargins, mv)
+          x: this.paperMargins +
+            (mu * (this.paperSize.paperWidth - (2 * this.paperMargins))),
+          y: this.paperMargins +
+            (mv * (this.paperSize.paperHeight - (2 * this.paperMargins)))
         }
 
         UVGridArray.push({
@@ -144,7 +152,6 @@ class Grid {
       }
       // UVGridArray.push(line)
     }
-    // console.log(UVGridArray)
     return UVGridArray
   }
 
