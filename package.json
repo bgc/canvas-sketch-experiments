@@ -1,0 +1,24 @@
+{
+  "name": "canvas-sketches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch0000.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typescript": "tsc -w",
+    "canvas-watch": "canvas-sketch ./bin/sketch0000.js --open",
+    "build-canvas": "canvas-sketch --build ./bin/sketch0000.js --output ./bin/final",
+    "build": "npm run typescript && npm run build-canvas"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.3",
+    "canvas-sketch-util": "^1.10.0",
+    "opentype.js": "^1.3.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
