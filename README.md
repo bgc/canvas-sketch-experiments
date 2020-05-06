@@ -1,1 +1,2 @@
-# canvas-sketch-experiments
+* Path2D()
+* clip()
