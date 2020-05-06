@@ -93,12 +93,12 @@ context.fillStyle = "#ffffff"
     DRAW_PROPERTIES
   }, randInstance, grid)
 
-  false && vertLinesRnd({
+  vertLinesRnd({
     context,
     DRAW_PROPERTIES
   }, randInstance, grid)
 
-  furLike({
+  false && furLike({
     context,
     DRAW_PROPERTIES
   }, randInstance, grid)
