@@ -11,7 +11,7 @@ class Grid {
   topPad: number
   paperMargins: number
   paperSize: { paperWidth: number, paperHeight: number }
-  gridContents: GridElement[]
+  gridContents: GridElement[][]
 
   constructor(
     cols: number,
@@ -92,10 +92,10 @@ class Grid {
   //   return gridArray
   // }
 
-  buildTheUVGrid(): GridElement[] {
+  buildTheUVGrid(): GridElement[][] {
     const UVGridArray = []
     for (let row = 0; row < this.rows; row++) {
-      // const line = []
+      const line = []
       for (let col = 0; col < this.cols; col++) {
 
         const u = col / this.cols
@@ -135,7 +135,7 @@ class Grid {
             (mv * (this.paperSize.paperHeight - (2 * this.paperMargins)))
         }
 
-        UVGridArray.push({
+        line.push({
           row: row,
           col: col,
           startPoint,
@@ -150,7 +150,7 @@ class Grid {
           }
         })
       }
-      // UVGridArray.push(line)
+      UVGridArray.push(line)
     }
     return UVGridArray
   }
@@ -159,22 +159,21 @@ class Grid {
     context.strokeStyle = 'black'
     context.lineWidth = 0.275
     this.gridContents.forEach(el => {
-
-      const { startPoint, size, midPoint, endPoint } = el
-      context.beginPath()
-      context.arc(midPoint.x, midPoint.y, 1.5, 0, Math.PI * 2, false)
-      context.strokeStyle = 'green'
-      context.stroke()
-      context.strokeStyle = 'black'
-      context.fillStyle = '#00000000'
-      context.strokeRect(
-        startPoint.x,
-        startPoint.y,
-        // endPoint.x - startPoint.x,
-        // endPoint.y - startPoint.y,
-        size.width,
-        size.height
-      )
+      el.forEach(point => {
+        const { startPoint, size, midPoint, endPoint } = point
+        context.beginPath()
+        context.arc(midPoint.x, midPoint.y, 1.5, 0, Math.PI * 2, false)
+        context.strokeStyle = 'green'
+        context.stroke()
+        context.strokeStyle = 'black'
+        context.fillStyle = '#00000000'
+        context.strokeRect(
+          startPoint.x,
+          startPoint.y,
+          size.width,
+          size.height
+        )
+      })
     })
   }
 

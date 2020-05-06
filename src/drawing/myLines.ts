@@ -10,12 +10,12 @@ export const myLines = (props: DrawingFNProps, rInstance:rand, grid: Grid) => {
   context.strokeStyle = 'black'
   context.lineWidth = DRAW_PROPERTIES.pensize
   context.lineJoin = 'round'
- /*  grid.gridContents.forEach((row: GridElement[]) => {
+  grid.gridContents.forEach((row: GridElement[]) => {
     let prevRand = DRAW_PROPERTIES.units === 'px'
       ? rInstance.value() * 2
       : rInstance.value()
     row.forEach((col: GridElement, index: number, array:GridElement[]) => {
-      const { /* startPoint, * midPoint } = col
+      const { midPoint } = col
       if (index !== array.length - 1) {
         const myRand = DRAW_PROPERTIES.units === 'px'
           ? rInstance.value() * 2
@@ -31,5 +31,5 @@ export const myLines = (props: DrawingFNProps, rInstance:rand, grid: Grid) => {
 
       context.stroke()
     })
-  }) */
+  })
 }

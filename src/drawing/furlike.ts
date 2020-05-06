@@ -29,25 +29,26 @@ export const furLike = (props: DrawingFNProps, rInstance: rand, grid: Grid) => {
   context.lineJoin = 'round'
 
   grid.gridContents.forEach((element) => {
-
-    const { midPoint, startPoint } = element
-    const noise = rInstance.noise2D(midPoint.u, midPoint.v, FREQUENCY, 2 * Math.PI)
-    if (rInstance.chance(PROBABILITY)) {
-      context.beginPath()
-      context.strokeStyle = rInstance.pick(colors)
-     /*  context.fillStyle = rInstance.pick(colors)
-      context.arc(
-        midPoint.x + Math.cos(noise) * rInstance.range(0.1, AMPLITUDE),
-        midPoint.y + Math.sin(noise) * rInstance.range(0.1, AMPLITUDE),
-        rInstance.range(0.1, AMPLITUDE),
-        0, Math.PI*2, false) */
-      context.moveTo(startPoint.x, startPoint.y)
-      context.lineTo(
-        midPoint.x + Math.cos(noise) * rInstance.range(0.1, AMPLITUDE),
-        midPoint.y + Math.sin(noise) * rInstance.range(0.1, AMPLITUDE)
-      )
-      context.stroke()
-      // context.fill()
-    }
+    element.forEach(point => {
+      const { midPoint, startPoint } = point
+      const noise = rInstance.noise2D(midPoint.u, midPoint.v, FREQUENCY, 2 * Math.PI)
+      if (rInstance.chance(PROBABILITY)) {
+        context.beginPath()
+        context.strokeStyle = rInstance.pick(colors)
+        /*  context.fillStyle = rInstance.pick(colors)
+         context.arc(
+           midPoint.x + Math.cos(noise) * rInstance.range(0.1, AMPLITUDE),
+           midPoint.y + Math.sin(noise) * rInstance.range(0.1, AMPLITUDE),
+           rInstance.range(0.1, AMPLITUDE),
+           0, Math.PI*2, false) */
+        context.moveTo(startPoint.x, startPoint.y)
+        context.lineTo(
+          midPoint.x + Math.cos(noise) * rInstance.range(0.1, AMPLITUDE),
+          midPoint.y + Math.sin(noise) * rInstance.range(0.1, AMPLITUDE)
+        )
+        context.stroke()
+        // context.fill()
+      }
+    })
   })
 }

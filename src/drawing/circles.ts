@@ -10,9 +10,9 @@ export const circles = (props: DrawingFNProps, rInstance: rand, grid: Grid) => {
   context.lineWidth = DRAW_PROPERTIES.pensize
   context.lineJoin = 'round'
 
-  /* grid.gridContents.forEach((row: GridElement[]) => {
+  grid.gridContents.forEach((row: GridElement[]) => {
     row.forEach((col:GridElement ) => {
-      const { /* startPoint, * size, midPoint } = col
+      const { size, midPoint } = col
       const myRand = DRAW_PROPERTIES.units === 'px'
         ? rInstance.value() * 2
         : rInstance.value()
@@ -27,5 +27,5 @@ export const circles = (props: DrawingFNProps, rInstance: rand, grid: Grid) => {
       )
       context.stroke()
     })
-  }) */
+  })
 }

@@ -20,12 +20,12 @@ export const vertLinesRnd = (props: DrawingFNProps, rInstance: rand, grid: Grid)
 
   let lines = new Array(grid.cols) as any;
   lines.fill(null);
-
+  const flattenedArray: GridElement[] = [].concat(...grid.gridContents)
   lines.forEach((value: any, index: number, linearr:any) => {
-    linearr[index] = grid.gridContents.filter((element) => element.col === index)
+    linearr[index] = flattenedArray.filter((element) => element.col === index)
   })
 
-
+  // TODO now that grid is 2 dimensional we do not need lines?
   lines.forEach((rowLines: GridElement[]) => {
     context.beginPath()
     context.strokeStyle = rInstance.pick(colors)
@@ -33,12 +33,7 @@ export const vertLinesRnd = (props: DrawingFNProps, rInstance: rand, grid: Grid)
     col.forEach((point: GridElement, idx: number, arrrgh: any) => {
 
       const currPoint = point.midPoint
-/*       if (idx === 0) {
-        context.moveTo(point.midPoint.x + 6*Math.cos(noise), point.midPoint.y)
-      }
-      else {
-        context.lineTo(point.midPoint.x + 6*Math.sin(noise), point.midPoint.y)
-      } */
+
       if(idx >= arrrgh.length-3){
         //do nothing
       }
