@@ -14,3 +14,7 @@ npm run canvas-watch #for canvas sketch running
 
 * Path2D()
 * clip()
+
+```sh
+git show --no-patch --format=%H
+```
