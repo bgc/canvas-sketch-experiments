@@ -1,6 +1,5 @@
 import Grid from './Grid/Grid'
 
-
 const gridMaker = (
   cols: number,
   rows: number,
@@ -22,7 +21,7 @@ const gridMaker = (
     availableWidth,
     availableHeight,
     paperMargins,
-    {paperWidth, paperHeight}
+    { paperWidth, paperHeight }
   )
 }
 

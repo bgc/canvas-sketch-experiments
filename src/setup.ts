@@ -1,4 +1,9 @@
-import { DrawingFNProps, SketchProps, DrawProperties, Settings } from '../types/index'
+import {
+  DrawingFNProps,
+  SketchProps,
+  DrawProperties,
+  Settings,
+} from '../types/index'
 
 export const RANDOM_SEED = 'dbd5b416-8c74-11ea-8224-5799187c3f28' // '31e42dca-8c74-11ea-8a77-97548b2b37e1' // 'de1e8290-6607-11ea-bf82-7368e432d854'
 
@@ -44,8 +49,8 @@ export const DRAW_PROPERTIES: DrawProperties = {
   pixelsPerInch: 72,
   mid: {
     x: null,
-    y: null
-  }
+    y: null,
+  },
 }
 
 export const settings: Settings = {
@@ -53,5 +58,5 @@ export const settings: Settings = {
   pixelsPerInch: DRAW_PROPERTIES.pixelsPerInch,
   units: DRAW_PROPERTIES.units,
   scaleToFit: false,
-  orientation: DRAW_PROPERTIES.orientation
+  orientation: DRAW_PROPERTIES.orientation,
 }

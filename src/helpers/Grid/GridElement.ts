@@ -1,28 +1,28 @@
 export type GridElement = {
-  col: number,
-  row: number,
+  col: number
+  row: number
   startPoint: {
-    x: number,
-    y: number,
-    u: number,
-    v: number,
-  },
+    x: number
+    y: number
+    u: number
+    v: number
+  }
   endPoint: {
-    x: number,
+    x: number
     y: number
-    u: number,
-    v: number,
-  },
+    u: number
+    v: number
+  }
   midPoint: {
-    x: number,
+    x: number
     y: number
-    u: number,
-    v: number,
-  },
+    u: number
+    v: number
+  }
   size: {
-    width: number,
+    width: number
     height: number
-    widthU: number,
-    heightV: number,
+    widthU: number
+    heightV: number
   }
 }

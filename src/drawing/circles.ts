@@ -1,5 +1,5 @@
 import { DrawingFNProps } from '../../types/index'
-type rand = { value: () => number; }
+type rand = { value: () => number }
 import Grid from '../helpers/Grid/Grid'
 import { GridElement } from '../helpers/Grid/GridElement'
 
@@ -11,11 +11,12 @@ export const circles = (props: DrawingFNProps, rInstance: rand, grid: Grid) => {
   context.lineJoin = 'round'
 
   grid.gridContents.forEach((row: GridElement[]) => {
-    row.forEach((col:GridElement ) => {
+    row.forEach((col: GridElement) => {
       const { size, midPoint } = col
-      const myRand = DRAW_PROPERTIES.units === 'px'
-        ? rInstance.value() * 2
-        : rInstance.value()
+      const myRand =
+        DRAW_PROPERTIES.units === 'px'
+          ? rInstance.value() * 2
+          : rInstance.value()
       context.beginPath()
       context.ellipse(
         midPoint.x + myRand,
@@ -23,7 +24,8 @@ export const circles = (props: DrawingFNProps, rInstance: rand, grid: Grid) => {
         size.width > size.height ? size.height / 2 - 1 : size.width / 2 - 1,
         size.width > size.height ? size.height / 2 - 1 : size.width / 2 - 1,
         0,
-        0, 2 * Math.PI
+        0,
+        2 * Math.PI
       )
       context.stroke()
     })

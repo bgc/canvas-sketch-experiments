@@ -1,7 +1,12 @@
 import { DrawingFNProps } from '../../types/index'
 type rand = {
-  value: () => number;
-  noise2D: (x: number, y: number, frequency?: number, amplitude?: number) => number,
+  value: () => number
+  noise2D: (
+    x: number,
+    y: number,
+    frequency?: number,
+    amplitude?: number
+  ) => number
   pick: (arr: any[]) => any
   boolean: () => boolean
   chance: (probability: number) => boolean
@@ -29,9 +34,14 @@ export const furLike = (props: DrawingFNProps, rInstance: rand, grid: Grid) => {
   context.lineJoin = 'round'
 
   grid.gridContents.forEach((element) => {
-    element.forEach(point => {
+    element.forEach((point) => {
       const { midPoint, startPoint } = point
-      const noise = rInstance.noise2D(midPoint.u, midPoint.v, FREQUENCY, 2 * Math.PI)
+      const noise = rInstance.noise2D(
+        midPoint.u,
+        midPoint.v,
+        FREQUENCY,
+        2 * Math.PI
+      )
       if (rInstance.chance(PROBABILITY)) {
         context.beginPath()
         context.strokeStyle = rInstance.pick(colors)

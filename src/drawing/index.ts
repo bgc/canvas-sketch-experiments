@@ -13,5 +13,5 @@ export {
   zLines,
   multipleArcs,
   vertLinesRnd,
-  furLike
+  furLike,
 }
