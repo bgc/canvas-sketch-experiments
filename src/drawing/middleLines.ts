@@ -37,7 +37,8 @@ export const middleLines = (
     linearr[index] = flattenedArray.filter((element) => element.col === index)
   })
 
-  // TODO now that grid is 2 dimensional we do not need lines?
+  // TODO test with 3D noise
+  // arrange the output to look better
   lines.forEach((rowLines: GridElement[]) => {
     context.beginPath()
     context.strokeStyle = rInstance.pick(colors)
