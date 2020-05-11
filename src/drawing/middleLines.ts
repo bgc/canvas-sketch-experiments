@@ -71,11 +71,14 @@ export const middleLines = (
           2 * Math.PI
         )
 
-        context.moveTo(DRAW_PROPERTIES.mid.x + AMPLITUDE * Math.cos(noise)*currPoint.v, currPoint.y)
+        context.moveTo(
+          DRAW_PROPERTIES.mid.x + AMPLITUDE * Math.cos(noise) * currPoint.v,
+          currPoint.y
+        )
         context.quadraticCurveTo(
-          DRAW_PROPERTIES.mid.x + AMPLITUDE * Math.cos(ctrlNoise)*ctrlPoint.v,
+          DRAW_PROPERTIES.mid.x + AMPLITUDE * Math.cos(ctrlNoise) * ctrlPoint.v,
           ctrlPoint.y,
-          DRAW_PROPERTIES.mid.x + AMPLITUDE * Math.cos(endNoise)*endPoint.v,
+          DRAW_PROPERTIES.mid.x + AMPLITUDE * Math.cos(endNoise) * endPoint.v,
           endPoint.y
         )
       }
