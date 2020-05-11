@@ -40,8 +40,8 @@ export const RANDOM_SEED = 'dbd5b416-8c74-11ea-8224-5799187c3f28' // '31e42dca-8
 // INSTAGRAM PROPS
 export const DRAW_PROPERTIES: DrawProperties = {
   pensize: 1,
-  cols: 50,
-  rows: 50,
+  cols: 150,
+  rows: 150,
   margins: 25,
   units: 'px',
   dimensions: [1080, 1080],

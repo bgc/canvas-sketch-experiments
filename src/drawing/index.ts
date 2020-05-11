@@ -5,6 +5,7 @@ import { zLines } from './zLines'
 import { multipleArcs } from './multipleArcs'
 import { vertLinesRnd } from './vertLinesRnd'
 import { furLike } from './furlike'
+import { middleLines } from './middleLines'
 
 export {
   betterLines,
@@ -14,4 +15,5 @@ export {
   multipleArcs,
   vertLinesRnd,
   furLike,
+  middleLines,
 }

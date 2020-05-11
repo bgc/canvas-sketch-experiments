@@ -13,6 +13,7 @@ import {
   multipleArcs,
   vertLinesRnd,
   furLike,
+  middleLines,
 } from './drawing/index'
 
 // eslint-disable-next-line no-unused-vars
@@ -130,7 +131,7 @@ const sketchFn = ({
       grid
     )
 
-  vertLinesRnd(
+  false && vertLinesRnd(
     {
       context,
       DRAW_PROPERTIES,
@@ -159,6 +160,16 @@ const sketchFn = ({
       120,
       130
     )
+
+    middleLines(
+      {
+        context,
+        DRAW_PROPERTIES,
+      },
+      randInstance,
+      grid
+    )
+
 }
 
 const sketch = () => sketchFn
